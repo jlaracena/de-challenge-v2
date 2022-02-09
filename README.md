@@ -38,7 +38,9 @@ Propose an architecture for the given situation, preferably with open source too
 The job must receive the datasets & brings a few things:
 
 - The position table for all the seasons.
-- **The other requeriments will be in the email**
+- **The other requeriments will be in the email**:
+    - Equipo con la mejor relación de disparos al arco terminando en gol por temporada.
+    - Equipo más goleado por temporada.
 
 The data is in the folder data/ in the root. The report needs to be exported to a file, you can chose the extension of the file, but remember this is an ETL Job.
 
