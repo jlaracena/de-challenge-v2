@@ -1,21 +1,18 @@
-variable "project" { }
+variable "project" {}
 
-variable "credentials_file" { }
+variable "credential_file" {}
 
 variable "location" {
   default = "US"
 }
 
-variable "region" {
-  type = string
-  default = "us-central1"
-}
+variable "region" {}
 
 variable "zone" {
   default = "us-central1-c"
 }
 
-variable "machine_type_composer"{
+variable "machine_type_composer" {
   default = "n1-standard-1"
 }
 
@@ -31,21 +28,17 @@ variable "epl_bucket_cloud_function_name" {
 }
 
 #Function
-variable "epl_file_arrival_notification_name"{
+variable "epl_file_arrival_notification_name" {
   default = "epl-file-arrival-notification"
 }
 
 #Composer
-variable "composer_env_name"{
-  type = string
+variable "composer_env_name" {
+  type    = string
   default = "epl-orquestator"
 
 }
 variable "epl_dag_name" {
   default = "ingest-epl-files"
-  
-}
-variable "sa_composer"{
-  type = string
-  defaul = "nombre del SA de composer"
+
 }
