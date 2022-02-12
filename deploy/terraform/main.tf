@@ -45,12 +45,6 @@ resource "google_storage_bucket" "epl_bucket_cloud_function" {
     deployment-tool = "terraform"
   }
 }
-#Function
-resource "google_storage_bucket_object" "epl_archive_cloud_function" {
-  name   = "file_arrival_notification.zip"
-  bucket = var.epl_bucket_cloud_function_name
-  source = "../../src/cf/code.py"
-}
 
 resource "google_cloudfunctions_function" "epl_file_arrival_notification" {
   name                  = var.epl_file_arrival_notification_name
@@ -58,7 +52,7 @@ resource "google_cloudfunctions_function" "epl_file_arrival_notification" {
   runtime               = "python39"
   available_memory_mb   = 128
   source_archive_bucket = var.epl_bucket_cloud_function_name
-  source_archive_object = google_storage_bucket_object.epl_archive_cloud_function.name
+  source_archive_object = "file_arrival_notification.zip"
   timeout               = 60
   entry_point           = "caller"
   labels = {
@@ -99,7 +93,7 @@ resource "google_composer_environment" "epl_composer" {
 }
 
 resource "google_compute_network" "epl_network" {
-  name                    = "epl_composer_network"
+  name                    = "epl-composer-network"
   auto_create_subnetworks = false
 }
 
@@ -136,7 +130,7 @@ resource "google_cloudfunctions_function_iam_member" "invoker" {
 }
 
 #Composer
-resource "google_project_iam_member" "composer-worker" {
+resource "google_project_iam_member" "composer_worker" {
   role   = "roles/composer.worker"
   member = "serviceAccount:${google_service_account.epl_composer_sa.email}"
 }
