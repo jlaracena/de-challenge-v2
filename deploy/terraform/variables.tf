@@ -42,3 +42,9 @@ variable "epl_dag_name" {
   default = "ingest-epl-files"
 
 }
+
+#service accounts
+variable "service_account_env" {
+  type = string
+  default = "terraform-test@peppy-oven-288419.iam.gserviceaccount.com"
+}

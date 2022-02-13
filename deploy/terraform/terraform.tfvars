@@ -1,3 +1,3 @@
-project =  "peppy-oven-288419"
-credential_file = "peppy-oven-288419-89f7306c19e0.json"
-region = "us-central1"
+project         = "peppy-oven-288419"
+credential_file = "service-account.json"
+region          = "us-central1"
