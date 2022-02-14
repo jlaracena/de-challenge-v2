@@ -4,7 +4,7 @@ echo "**************************************************************************
 echo "You are configurating EPL Infra"
 echo "**************************************************************************"
 
-#Deply Infra
+#Deploy Infra
 terraform plan
 terraform apply
 
