@@ -2,6 +2,7 @@
 - Create a Service Account in your GCP proyect and save it in the deploy/terraform folder.
 - Set your proyect id, region and service account name in terraform.tfvars.
 - Set variables in variables.tf (specially storage name because there are unique).
+- Set de variables in src/composer/airflow with your information.
 
 # Deploy
 - Set bucket landing in deploy.sh
