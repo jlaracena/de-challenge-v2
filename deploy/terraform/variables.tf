@@ -27,11 +27,6 @@ variable "epl_bucket_cloud_function_name" {
   default = "epl-bucket-cloud-function-405cfea8d0ed"
 }
 
-#Function
-variable "epl_file_arrival_notification_name" {
-  default = "epl-file-arrival-notification"
-}
-
 #Composer
 variable "composer_env_name" {
   type    = string
@@ -40,7 +35,6 @@ variable "composer_env_name" {
 }
 variable "epl_dag_name" {
   default = "ingest-epl-files"
-
 }
 
 #service accounts
