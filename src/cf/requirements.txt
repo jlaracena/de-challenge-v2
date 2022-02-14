@@ -1,5 +1,0 @@
-google.cloud.storage
-google-auth==1.6.2
-requests==2.21.0
-six==1.15.0
-requests_toolbelt==0.9.1
